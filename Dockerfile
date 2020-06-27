@@ -22,7 +22,9 @@ RUN apk add --no-cache ca-certificates bash git openssh curl \
     && chmod +x /usr/local/bin/kubectl \
     && wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm \
-    && chmod g+rwx /root
+    && chmod g+rwx /root \
+    && mkdir /config \
+    && chmod g+rwx /config    
 
 WORKDIR /config
 
